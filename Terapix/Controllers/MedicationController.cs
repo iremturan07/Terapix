@@ -20,7 +20,7 @@ namespace Terapix.API.Controllers
         {
             _medicationService = medicationService;
             _mapper = mapper;
-        }
+        } 
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> All()
