@@ -47,8 +47,8 @@ namespace Terapix.API.Controllers
         {
             
             var appointment = await _appointmentService.GetByIdAssync(id);
-            
-            _appointmentService.ChangeStatus(appointment);
+
+            await _appointmentService.RemoveAsync(appointment);
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
         [Authorize]

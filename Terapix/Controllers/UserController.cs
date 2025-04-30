@@ -49,7 +49,7 @@ namespace Terapix.API.Controllers
 
             var user = await _userService.GetByIdAssync(id);
 
-            _userService.ChangeStatus(user);
+            await _userService.RemoveAsync(user);
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 

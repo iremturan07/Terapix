@@ -6,6 +6,7 @@ using Terapix.API.Filters;
 using Terapix.CORE.DTOs;
 using Terapix.CORE.Models;
 using Terapix.CORE.Services;
+using Terapix.SERVICE.Services;
 
 namespace Terapix.API.Controllers
 {
@@ -48,7 +49,7 @@ namespace Terapix.API.Controllers
 
             var medication= await _medicationService.GetByIdAssync(id);
 
-            _medicationService.ChangeStatus(medication);
+            await _medicationService.RemoveAsync(medication);
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
         [Authorize]

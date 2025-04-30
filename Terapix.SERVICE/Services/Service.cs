@@ -71,6 +71,12 @@ namespace Terapix.SERVICE.Services
            return await _repository.GetByIdAsync(id);
         }
 
+        public async Task RemoveAsync(T entity)
+        {
+            _repository.Remove(entity);              
+            await _unitOfWorks.CommitAsync();
+        }
+
         public void update(T entity)
         {
             _repository.Update(entity);

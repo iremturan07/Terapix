@@ -52,6 +52,11 @@ namespace Terapix.REPOSİTORY.Repositories
             return await _dbSet.FindAsync(id);
         }
 
+        public void Remove(T entity)
+        {
+            _context.Set<T>().Remove(entity);
+        }
+
         public void Update(T entity)
         {
             _dbSet.Update(entity);

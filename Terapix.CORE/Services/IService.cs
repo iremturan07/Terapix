@@ -14,6 +14,7 @@ namespace Terapix.CORE.Services
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
         int Count();
         void update(T entity);
+        Task RemoveAsync(T entity);
         void ChangeStatus(T entity);
         Task<T> AddyAsync(T entity);
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression);
