@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 namespace Terapix.CORE.Models
 {
     public class Medication:BaseEntity
-    { 
+    {
+        public Medication()
+        {
+            Status = true; 
+        }
         public string Medicine { get; set; }
         public double Dosage { get; set; }
         public DateOnly Start {  get; set; }
